@@ -7,25 +7,23 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.LinearLayout.HORIZONTAL
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.jetbrains.annotations.NotNull as NotNull1
-
+import android.content.Intent
+import android.widget.ImageButton
+import android.widget.TextView
+import kotlinx.android.synthetic.main.item_global_buttom.*
 
 class MainActivity : AppCompatActivity() {
     val userList = arrayListOf<User>(
-        User("알라딘", "hong@naver.com", "https://www/photo/2016/04/10/21/34/woman-1320810_1280.jpg"),
-        User("알라딘2", "hong@naver.com", "https://www/photo/2016/04/10/21/34/woman-1320810_1280.jpg"),
-        User("알라딘3", "hong@naver.com", "https://www/photo/2016/04/10/21/34/woman-1320810_1280.jpg"),
-        User("피난안내도", "lee@naver.com", "https://www/photo/2017/11/11/21/55/girl-2940655_1280.jpg"),
-        User("피난안내도2", "lee@naver.com", "https://www/photo/2017/11/11/21/55/girl-2940655_1280.jpg"),
-        User("피난안내도3", "lee@naver.com", "https://www/photo/2017/11/11/21/55/girl-2940655_1280.jpg"),
-        User("피난안내도4", "kang@naver.com", "https://www/photo/2018/02/05/03/21/fantasy-3131323_1280.jpg"),
-        User("바나나1", "eulji@naver.com", "https://www/photo/2018/01/01/23/38/ballerina-3055155_1280.jpg"),
-        User("바나나3", "kwang@naver.com", "https://www/photo/2018/01/13/19/39/fashion-3080644__340.jpg"),
-        User("바나나2", "im@naver.com", "https://www/photo/2017/11/11/21/55/girl-2940655_1280.jpg")
+        User("알라딘", "hong@naver.com", ""),
+        User("알라딘2", "hong@naver.com", ""),
+        User("알라딘3", "hong@naver.com", ""),
+        User("바나나1", "eulji@naver.com", ""),
+        User("바나나3", "kwang@naver.com", "")
     )
 
     @SuppressLint("WrongConstant")
@@ -33,9 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         //임시 데이터 배열
-
         val cities = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line)
         etMainSearch!!.setAdapter(cities)
         etMainSearch.addTextChangedListener(object : TextWatcher {
@@ -51,6 +47,31 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         //어답터 설정
         recyclerView.adapter = RecyclerViewAdapter(userList)
+
+
+       //아이템 추가 하자
+        val btRegisterItem=findViewById<ImageButton>(R.id.btRegisterItem)
+        btRegisterItem.setOnClickListener{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        //mypage로 간당
+        val btMypage = findViewById<ImageButton>(R.id.btMypage)
+        btMypage.setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
+        }
+
+        //**************************************************************************************
+        //(로그인 구현한거 테스트 하기 위해서 만듬. 지울예정!!) 로그인하러 가는 버튼 만들어서 로그인 화면으로 이동하기
+        val gotosignsign_test = findViewById<Button>(R.id.gotosignsign_test)
+        gotosignsign_test.setOnClickListener {
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
+        }
+        //****************************************************************************************
+
     }
 
     private fun runFirstComplete() {
