@@ -2,32 +2,42 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-            android:id="@+id/btUploadPicture"
-            android:layout_width="match_parent"
+            android:id="@+id/itemPic"
+            android:layout_width="200dp"
             android:layout_height="200dp"
-            app:srcCompat="@android:drawable/ic_input_add"
-
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+            android:id="@+id/btLoadPic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:layout_below="@+id/itemPic"
+            android:text="Load Picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintTop_toBottomOf="@+id/itemPic"/>
 
-      <TextView
+    <TextView
             android:text="여기에 글을 등록해주세요~"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/btUploadPicture"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/btLoadPic"/>
     <ImageView
             android:layout_width="80dp"
             android:layout_height="54dp"
@@ -57,14 +67,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             layout="@layout/item_global_buttom"/>
-    <TextureView
-            android:id="@+id/view_finder"
-            android:layout_width="240px"
-            android:layout_height="240px"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.903"
-            app:layout_constraintVertical_bias="0.307"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
