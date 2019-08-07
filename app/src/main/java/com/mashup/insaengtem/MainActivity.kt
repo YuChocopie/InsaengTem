@@ -12,22 +12,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_global_bottom.*
-import kotlinx.android.synthetic.main.item_global_category.*
-import kotlinx.android.synthetic.main.activity_main.*
-import android.annotation.SuppressLint
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.LinearLayout.HORIZONTAL
-import androidx.recyclerview.widget.LinearLayoutManager
 import org.jetbrains.annotations.NotNull as NotNull1
-import android.content.Intent
-import android.widget.ImageButton
-import android.widget.TextView
-import kotlinx.android.synthetic.main.item_global_buttom.*
-
 class MainActivity : AppCompatActivity() {
     val userList = arrayListOf<User>(
         User("알라딘", "hong@naver.com", ""),
@@ -183,9 +168,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean { //검색기능 추가
 
-        menuInflater.inflate(R.menu.main,menu)
         val searchItem = menu.findItem(R.id.menu_search)
-
         if(searchItem != null){
             Log.e("123123","searchView")
             var searchView: SearchView
