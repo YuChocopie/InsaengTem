@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+    <ImageButton
+            android:src="@drawable/ic_favorite_black_24dp"
+            android:id="@+id/btRegisterItem"
+            android:layout_width="135dp"
+            android:layout_height="100dp"/>
+    <ImageButton
+            android:src="@drawable/ic_home_black_24dp"
+            android:id="@+id/home"
+            android:layout_width="135dp"
+            android:layout_height="100dp"/>
+    <ImageButton
+            android:src="@drawable/ic_settings_black_24dp"
+            android:id="@+id/btMypage"
+            android:layout_width="135dp"
+            android:layout_height="100dp"/>
+</LinearLayout>
