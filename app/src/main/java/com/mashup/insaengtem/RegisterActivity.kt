@@ -91,7 +91,6 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
                //배치해놓은 imageView에 set
                 itemPic.setImageBitmap(bitmap)
 
-                val itemView = itemPic.findViewById<ImageView>(R.id.itemPic)
         }
     }
 
@@ -134,12 +133,7 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
             startActivity(intent)
             //Intent 시작 - 갤러리앱을 열어서 원하는 이미지를 선택할 수 있다.
             intent.action = Intent.ACTION_GET_CONTENT
-            Log.e("여기야", "갤러리 실행")
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
-            Log.e("여기야", "여기된다!~~~~~~~~~~~~~~~~~~~~~~~~")
-
-            //onActivityResult(1, 2, intent)  //굳이 안써도 되는거였음.
-            Log.e("여기야", "끝났어요")
 
         }
     }

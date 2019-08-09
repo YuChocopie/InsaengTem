@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_global_buttom.*
 class MyPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mypage)
+        setContentView(R.layout.activity_mypage)
 
 
         btMypage.setBackgroundResource(R.color.HotPink)

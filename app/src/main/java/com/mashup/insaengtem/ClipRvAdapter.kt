@@ -7,24 +7,23 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.mashup.insaengtem.data.MainItemCard
 
-class ClipRvAdapter(val context: Context, val clipList: ArrayList<Clip>) :
+class ClipRvAdapter(val context: Context, val itemList: ArrayList<MainItemCard>) :
     RecyclerView.Adapter<ClipRvAdapter.Holder>(){
 
     inner class Holder(itemView:View) : RecyclerView.ViewHolder(itemView){
         val clipImage = itemView.findViewById<ImageView>(R.id.iv_clip)
-        val iv_text = itemView.findViewById<TextView>(R.id.iv_text)
+        val clipText = itemView.findViewById<TextView>(R.id.iv_text)
 
-        fun bind(clip : Clip,context: Context) {
-            if (clip.image != "") {
-                val resourceId = context.resources
-                    .getIdentifier(clip.image, "drawable", context.packageName)
-
-                clipImage.setImageResource(resourceId)
+        fun bind(item : MainItemCard,context: Context) {
+            if (item.image != "") {
+                Glide.with(context).load(item.image).into(clipImage);
             } else {
                 clipImage.setImageResource(R.mipmap.ic_launcher)
             }
-            iv_text.text= clip.text
+            clipText.text= item.description
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -34,10 +33,10 @@ class ClipRvAdapter(val context: Context, val clipList: ArrayList<Clip>) :
         return Holder(view)
     }
     override fun getItemCount(): Int {
-        return clipList.size
+        return itemList.size
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(clipList[position], context)
+        holder.bind(itemList[position], context)
     }
 }
