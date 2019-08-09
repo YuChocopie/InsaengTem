@@ -8,8 +8,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.View
-import android.widget.CheckBox
-import android.widget.ImageButton
 import android.widget.Toast
 
 import androidx.annotation.RequiresApi
@@ -24,8 +22,6 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_global_buttom.*
 import kotlinx.android.synthetic.main.item_global_category.*
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import org.jetbrains.annotations.NotNull as NotNull1
 
 
@@ -43,8 +39,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         getList()
-
-        home.setBackgroundResource(R.color.HotPink)
+        home.setImageResource(R.drawable.ic_home_red)
  
 
         //게시물 올리기 버튼
@@ -62,52 +57,52 @@ class MainActivity : AppCompatActivity() {
         btnCategoryFoodDessert.setOnClickListener { v ->
             v?.setBackgroundColor(Color.GREEN)
             btnCategoryFoodDessert.setTextColor(Color.BLUE)
-            btnCategoryFoodDessert.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryFoodDessert.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryFoodDrinks.setOnClickListener { v ->
             v?.setBackgroundColor(Color.GREEN)
             btnCategoryFoodDrinks.setTextColor(Color.BLUE)
-            btnCategoryFoodDrinks.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryFoodDrinks.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryFoodFoods.setOnClickListener { v ->
             v?.setBackgroundColor(Color.GREEN)
             btnCategoryFoodFoods.setTextColor(Color.BLUE)
-            btnCategoryFoodFoods.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryFoodFoods.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryFoodSnacks.setOnClickListener { v ->
             v?.setBackgroundColor(Color.GREEN)
             btnCategoryFoodSnacks.setTextColor(Color.BLUE)
-            btnCategoryFoodSnacks.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryFoodSnacks.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryFoodNecessarie.setOnClickListener { v ->
             v?.setBackgroundColor(Color.YELLOW)
             btnCategoryFoodNecessarie.setTextColor(Color.BLUE)
-            btnCategoryFoodNecessarie.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryFoodNecessarie.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryLeisureDrama.setOnClickListener { v ->
             v?.setBackgroundColor(Color.CYAN)
             btnCategoryLeisureDrama.setTextColor(Color.BLUE)
-            btnCategoryLeisureDrama.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryLeisureDrama.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryLeisureMovie.setOnClickListener { v ->
             v?.setBackgroundColor(Color.CYAN)
             btnCategoryLeisureMovie.setTextColor(Color.BLUE)
-            btnCategoryLeisureMovie.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryLeisureMovie.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryLeisureBook.setOnClickListener { v ->
             v?.setBackgroundColor(Color.CYAN)
             btnCategoryLeisureBook.setTextColor(Color.BLUE)
-            btnCategoryLeisureBook.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryLeisureBook.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryLeisureMusic.setOnClickListener { v ->
             v?.setBackgroundColor(Color.CYAN)
             btnCategoryLeisureMusic.setTextColor(Color.BLUE)
-            btnCategoryLeisureMusic.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryLeisureMusic.setBackgroundResource(R.drawable.square_round20)
         }
         btnCategoryEtc.setOnClickListener { v ->
             v?.setBackgroundColor(Color.MAGENTA)
             btnCategoryEtc.setTextColor(Color.BLUE)
-            btnCategoryEtc.setBackgroundResource(R.drawable.square_round5)
+            btnCategoryEtc.setBackgroundResource(R.drawable.square_round20)
         }
 
         var categoryVisible = false

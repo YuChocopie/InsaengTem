@@ -11,18 +11,19 @@ class MyPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypage)
 
-        btMypage.setBackgroundResource(R.color.HotPink)
-
+        btMypage.setImageResource(R.drawable.ic_settings_red)
         //홈버튼 클릭시 홈으로 가기
         home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         //게시물 올리기 버튼
         btRegisterItem.setOnClickListener {
             val intent= Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

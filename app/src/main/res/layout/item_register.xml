@@ -29,7 +29,7 @@
             app:layout_constraintTop_toBottomOf="@+id/item_register_category"/>
     <Button
             android:background="@color/colorWhite"
-            android:drawableTop="@drawable/baseline_photo_camera_black_24dp"
+            android:drawableTop="@drawable/baseline_photo_camera_black"
             android:id="@+id/btLoadPic"
 
             android:layout_width="match_parent"

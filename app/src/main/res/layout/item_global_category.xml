@@ -16,7 +16,7 @@
                 android:orientation="horizontal">
 
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:padding="6dp"
@@ -31,7 +31,7 @@
             />
 
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -45,7 +45,7 @@
                     android:textStyle="italic"/>
 
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -60,7 +60,7 @@
             />
 
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -76,7 +76,7 @@
             <CheckBox
                     android:textStyle="italic"
                     android:layout_weight="1"
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -95,7 +95,7 @@
                 android:orientation="horizontal"
         >
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -108,7 +108,7 @@
                     android:textStyle="italic"
                     android:text="#드라마"/>
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -121,7 +121,7 @@
                     android:textStyle="italic"
                     android:text="#영화"/>
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -134,7 +134,7 @@
                     android:textStyle="italic"
                     android:text="#책"/>
             <CheckBox
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
@@ -148,7 +148,7 @@
                     android:text="#음악"/>
             <CheckBox
                     android:textStyle="italic"
-                    android:background="@drawable/square_round5"
+                    android:background="@drawable/square_round20"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"

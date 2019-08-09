@@ -11,27 +11,29 @@ import com.bumptech.glide.Glide
 import com.mashup.insaengtem.data.MainItemCard
 
 class ClipRvAdapter(val context: Context, val itemList: ArrayList<MainItemCard>) :
-    RecyclerView.Adapter<ClipRvAdapter.Holder>(){
+        RecyclerView.Adapter<ClipRvAdapter.Holder>() {
 
-    inner class Holder(itemView:View) : RecyclerView.ViewHolder(itemView){
+    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val clipImage = itemView.findViewById<ImageView>(R.id.iv_clip)
         val clipText = itemView.findViewById<TextView>(R.id.iv_text)
 
-        fun bind(item : MainItemCard,context: Context) {
+        fun bind(item: MainItemCard, context: Context) {
             if (item.image != "") {
                 Glide.with(context).load(item.image).into(clipImage);
             } else {
                 clipImage.setImageResource(R.mipmap.ic_launcher)
             }
-            clipText.text= item.description
+            clipText.text = item.description
         }
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(
-            R.layout.item_clip,parent,false
+                R.layout.item_clip, parent, false
         )
         return Holder(view)
     }
+
     override fun getItemCount(): Int {
         return itemList.size
     }
