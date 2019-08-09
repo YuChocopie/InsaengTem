@@ -60,12 +60,6 @@ class MainActivity : AppCompatActivity() {
 
             var server = retrofit.create(Service_test::class.java)  //여기 고쳐야함.
 
-
-//        var now = LocalDate.now()
-//
-//        var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd") )
-//        tv_1.text=Strnow
-
             home.setBackgroundResource(R.color.HotPink)
 
             //게시물 올리기 버튼

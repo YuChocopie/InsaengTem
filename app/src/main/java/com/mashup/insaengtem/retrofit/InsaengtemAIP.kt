@@ -1,4 +1,4 @@
-package com.mashup.insaengtem
+package com.mashup.insaengtem.retrofit
 
 class InsaengtemAIP {
 
