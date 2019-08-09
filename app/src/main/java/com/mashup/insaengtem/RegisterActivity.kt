@@ -6,14 +6,25 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LifecycleOwner
+import com.mashup.insaengtem.data.InsaengtemInterface
+import com.mashup.insaengtem.data.MainItemCard
+import com.mashup.insaengtem.retrofit.InsaengtemAIP
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.item_global_buttom.*
 import kotlinx.android.synthetic.main.item_register.*
 
 class RegisterActivity : AppCompatActivity(), LifecycleOwner {
+
+    private var thisAIP = InsaengtemAIP()
+    private var thisRetrofit = thisAIP.temRetrofit()
+    private var thisInterface = thisRetrofit.create(InsaengtemInterface::class.java)
+    var Item = arrayListOf<MainItemCard>()
 
     private val PICK_IMAGE_REQUEST = 1
     private val PICK_CONTACT_REQUEST = 2  // The request code
@@ -87,6 +98,7 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
             btItemSave.setOnClickListener {
                 Toast.makeText(this, "아이템을 등록했습니다.", Toast.LENGTH_LONG).show()
 //                    TODO::...
+                Register()
                 finish()
             }
 
@@ -95,9 +107,29 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
                 Toast.makeText(this, "아이템 등록을 취소합니다..", Toast.LENGTH_SHORT).show()
                 finish()
             }
-
         }
+    }
 
+
+    private fun Register() {
+//        thisInterface.Register(MainItemCard[0])
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({ result ->
+//                Log.e("123123123", "성공".toString())
+//
+//                val intent = Intent(this, MainActivity::class.java)
+//                startActivity(intent)
+//                finish()
+//            }, { error ->
+//                error.printStackTrace()
+//                Log.e("123123123", "통신실패".toString())
+//                Toast.makeText(this, "통신실패", Toast.LENGTH_SHORT).show()
+//            }, {
+//                // 작업이 정상적으로 완료되지 않았을 때 호출됩니다.
+//                Log.d("Result", "complete")
+//
+//            })
     }
 
 }
