@@ -32,7 +32,6 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this@SignUpActivity, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
             }
 
-
         }
 
         //회원가입 안하고 다시 로그인화면으로 돌아간다.
