@@ -28,7 +28,6 @@
                     android:layout_height="wrap_content"
                     android:text="#디저트"
                     android:textStyle="italic"
-                    android:onClick="radio_button_click"
             />
 
             <CheckBox
@@ -43,8 +42,7 @@
                     android:layout_height="wrap_content"
                     android:lines="1"
                     android:text="#주류"
-                    android:textStyle="italic"
-                    android:onClick="radio_button_click"/>
+                    android:textStyle="italic"/>
 
             <CheckBox
                     android:background="@drawable/square_round5"
@@ -59,7 +57,7 @@
                     android:lines="1"
                     android:text="#음식"
                     android:textStyle="italic"
-                    android:onClick="radio_button_click"/>
+            />
 
             <CheckBox
                     android:background="@drawable/square_round5"
