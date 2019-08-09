@@ -133,12 +133,13 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
 
             //인생템을 저장
             btItemSave.setOnClickListener {
-                Toast.makeText(this, "아이템을 등록했습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "아이템을 등록했습니다.", Toast.LENGTH_LONG).show()
             }
 
             //인생템 저장을 취소
             btItemDelete.setOnClickListener {
                 Toast.makeText(this, "아이템 등록을 취소합니다..", Toast.LENGTH_SHORT).show()
+                finish()
             }
 
         }
