@@ -1,12 +1,13 @@
 package com.mashup.insaengtem
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,12 +15,24 @@ import androidx.lifecycle.LifecycleOwner
 import com.mashup.insaengtem.data.InsaengtemInterface
 import com.mashup.insaengtem.data.MainItemCard
 import com.mashup.insaengtem.retrofit.InsaengtemAIP
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.item_global_buttom.*
+import kotlinx.android.synthetic.main.item_global_category.*
 import kotlinx.android.synthetic.main.item_register.*
 
 class RegisterActivity : AppCompatActivity(), LifecycleOwner {
+    var categoryList: ArrayList<Boolean> = arrayListOf(true, true, true, true, true, true, true, true, true, true)
+
+    //            0 = 디저트
+//            1 = 주류
+//            2 = 음식
+//            3= 스낵
+//            4= 생필품
+//            5 = 드라마
+//            6 = 영화
+//            7 = 책
+//            8 = 음악
+//            9 = 기타
+    private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
 
     private var thisAIP = InsaengtemAIP()
     private var thisRetrofit = thisAIP.temRetrofit()
@@ -58,6 +71,33 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
         }
     }
 
+    private fun btnCheck(whichButton: Int) {
+        var ex: Button? = null
+
+        when (whichButton) {
+            0 -> ex = btnCategoryFoodDessert
+            1 -> ex = btnCategoryFoodDrinks
+            2 -> ex = btnCategoryFoodFoods
+            3 -> ex = btnCategoryFoodSnacks
+            4 -> ex = btnCategoryFoodNecessarie
+            5 -> ex = btnCategoryLeisureDrama
+            6 -> ex = btnCategoryLeisureMovie
+            7 -> ex = btnCategoryLeisureBook
+            8 -> ex = btnCategoryLeisureMusic
+            9 -> ex = btnCategoryEtc
+        }
+
+        if (categoryList[whichButton]) {
+            ex!!.setTextColor(Color.BLUE)
+            ex.setBackgroundResource(R.drawable.square_check)
+            categoryList[whichButton] = false
+        } else {
+            ex!!.setTextColor(Color.BLACK)
+            ex.setBackgroundResource(R.drawable.square_round20)
+            categoryList[whichButton] = true
+        }
+    }
+
     @SuppressLint("WrongViewCast", "ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +118,38 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
             finish()
         }
 
+        btnCategoryFoodDessert.setOnClickListener {
+            btnCheck(0)
+        }
+        btnCategoryFoodDrinks.setOnClickListener {
+            btnCheck(1)
+        }
+        btnCategoryFoodFoods.setOnClickListener {
+            btnCheck(2)
+        }
+        btnCategoryFoodSnacks.setOnClickListener {
+            btnCheck(3)
+        }
+        btnCategoryFoodNecessarie.setOnClickListener {
+            btnCheck(4)
+        }
+        btnCategoryLeisureDrama.setOnClickListener {
+            btnCheck(5)
+        }
+        btnCategoryLeisureMovie.setOnClickListener {
+            btnCheck(6)
+        }
+        btnCategoryLeisureBook.setOnClickListener {
+            btnCheck(7)
+        }
+        btnCategoryLeisureMusic.setOnClickListener {
+            btnCheck(8)
+        }
+        btnCategoryEtc.setOnClickListener {
+            btnCheck(9)
+        }
+
+        val btItemDelete = findViewById<ImageView>(R.id.btItemDelete)
         btItemDelete.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

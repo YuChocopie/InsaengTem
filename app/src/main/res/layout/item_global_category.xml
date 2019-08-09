@@ -12,152 +12,162 @@
         <LinearLayout
                 android:id="@+id/category1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:weightSum="5"
                 android:orientation="horizontal">
 
-            <CheckBox
-                    android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
+
+            <Button
+                    android:background="@drawable/square_round10"
                     android:textColor="#000000"
-                    android:padding="6dp"
+                    android:padding="4dp"
                     android:gravity="center"
                     android:id="@+id/btnCategoryFoodDessert"
                     android:textSize="13sp"
                     android:lines="1"
+                    android:layout_margin="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#디저트"
-                    android:textStyle="italic"
-            />
+    android:layout_weight="1"
+                    android:onClick="radio_button_click"
+                    android:layout_marginEnd="15dp"/>
 
-            <CheckBox
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryFoodDrinks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:lines="1"
                     android:text="#주류"
-                    android:textStyle="italic"/>
+                    android:onClick="radio_button_click"
+                    android:layout_marginEnd="15dp"/>
 
-            <CheckBox
-                    android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
+            <Button
+                    android:background="@drawable/square_round10"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryFoodFoods"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:text="#음식"
-                    android:textStyle="italic"
-            />
+                    android:layout_weight="1"
+                    android:text="음식"
+                    android:onClick="radio_button_click"
+                    android:layout_marginEnd="15dp"/>
 
-            <CheckBox
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryFoodSnacks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:textStyle="italic"
-                    android:text="#스낵"/>
-
-            <CheckBox
-                    android:textStyle="italic"
                     android:layout_weight="1"
+                    android:text="#스낵"
+                    android:layout_marginEnd="15dp"/>
+
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryFoodNecessarie"
-                    android:layout_width="98dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
+                    android:layout_weight="1"
                     android:text="#생필품"/>
         </LinearLayout>
         <LinearLayout
                 android:id="@+id/category2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:orientation="horizontal"
-        >
-            <CheckBox
+                android:weightSum="5">
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryLeisureDrama"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:textStyle="italic"
-                    android:text="#드라마"/>
-            <CheckBox
+                    android:layout_weight="1"
+                    android:text="#드라마"
+                    android:layout_marginEnd="15dp"/>
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryLeisureMovie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:textStyle="italic"
-                    android:text="#영화"/>
-            <CheckBox
+                    android:layout_weight="1"
+                    android:text="#영화"
+                    android:layout_marginEnd="15dp"/>
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryLeisureBook"
-                    android:layout_width="75dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:textStyle="italic"
-                    android:text="#책"/>
-            <CheckBox
+                    android:layout_weight="1"
+                    android:text="#책"
+                    android:layout_marginEnd="15dp"/>
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryLeisureMusic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
-                    android:textStyle="italic"
-                    android:text="#음악"/>
-            <CheckBox
-                    android:textStyle="italic"
+                    android:layout_weight="1"
+                    android:text="#음악"
+                    android:layout_marginEnd="15dp"/>
+            <Button
                     android:background="@drawable/square_round20"
-                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
-                    android:padding="6dp"
+                    android:padding="4dp"
+                    android:layout_margin="5dp"
                     android:id="@+id/btnCategoryEtc"
-                    android:layout_width="102dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
+                    android:layout_weight="1"
                     android:text="#기타"/>
         </LinearLayout>
 </LinearLayout>
