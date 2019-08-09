@@ -9,15 +9,12 @@ import android.view.Menu
 import android.view.View
 import android.widget.CheckBox
 import android.widget.ImageButton
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mashup.insaengtem.R.color.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_global_buttom.*
-import kotlinx.android.synthetic.main.item_global_category.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import org.jetbrains.annotations.NotNull as NotNull1
@@ -35,16 +32,16 @@ class MainActivity : AppCompatActivity() {
         Clip("marchi5", "zcasd")
     )
 
-    lateinit var cb_Dessert: CheckBox
-    lateinit var cb_Drinks: CheckBox
-    lateinit var cb_Foods: CheckBox
-    lateinit var cb_Snacks: CheckBox
-    lateinit var cb_Necessaries: CheckBox
-    lateinit var cb_Drama: CheckBox
-    lateinit var cb_Movie: CheckBox
-    lateinit var cb_Book: CheckBox
-    lateinit var cb_Music: CheckBox
-    lateinit var cb_Etc: CheckBox
+    lateinit var btnCategoryFoodDessert: CheckBox
+    lateinit var btnCategoryFoodDrinks: CheckBox
+    lateinit var btnCategoryFoodFoods: CheckBox
+    lateinit var btnCategoryFoodSnacks: CheckBox
+    lateinit var btnCategoryFoodNecessarie: CheckBox
+    lateinit var btnCategoryLeisureDrama: CheckBox
+    lateinit var btnCategoryLeisureMovie: CheckBox
+    lateinit var btnCategoryLeisureBook: CheckBox
+    lateinit var btnCategoryLeisureMusic: CheckBox
+    lateinit var btnCategoryEtc: CheckBox
 
         @RequiresApi(Build.VERSION_CODES.M)
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,88 +73,56 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-
-            cb_Dessert = findViewById<CheckBox>(R.id.btnCategoryFoodDessert)
-            cb_Drinks = findViewById<CheckBox>(R.id.btnCategoryFoodDrinks)
-            cb_Foods = findViewById<CheckBox>(R.id.btnCategoryFoodFoods)
-            cb_Snacks = findViewById<CheckBox>(R.id.btnCategoryFoodSnacks)
-            cb_Necessaries = findViewById<CheckBox>(R.id.btnCategoryFoodNecessarie)
-            cb_Drama = findViewById<CheckBox>(R.id.btnCategoryLeisureDrama)
-            cb_Movie = findViewById<CheckBox>(R.id.btnCategoryLeisureMovie)
-            cb_Book = findViewById<CheckBox>(R.id.btnCategoryLeisureBook)
-            cb_Music = findViewById<CheckBox>(R.id.btnCategoryLeisureMusic)
-            cb_Etc = findViewById<CheckBox>(R.id.btnCategoryEtc)
-
-            btnCategoryFoodDessert.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.GREEN)
-                    btnCategoryFoodDessert.setTextColor(Color.BLUE)
-                    btnCategoryFoodDessert.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryFoodDrinks.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.GREEN)
-                    btnCategoryFoodDrinks.setTextColor(Color.BLUE)
-                    btnCategoryFoodDrinks.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryFoodFoods.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.GREEN)
-                    btnCategoryFoodFoods.setTextColor(Color.BLUE)
-                    btnCategoryFoodFoods.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryFoodSnacks.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.GREEN)
-                    btnCategoryFoodSnacks.setTextColor(Color.BLUE)
-                    btnCategoryFoodSnacks.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryFoodNecessarie.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.YELLOW)
-                    btnCategoryFoodNecessarie.setTextColor(Color.BLUE)
-                    btnCategoryFoodNecessarie.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryLeisureDrama.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.CYAN)
-                    btnCategoryLeisureDrama.setTextColor(Color.BLUE)
-                    btnCategoryLeisureDrama.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryLeisureMovie.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.CYAN)
-                    btnCategoryLeisureMovie.setTextColor(Color.BLUE)
-                    btnCategoryLeisureMovie.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryLeisureBook.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.CYAN)
-                    btnCategoryLeisureBook.setTextColor(Color.BLUE)
-                    btnCategoryLeisureBook.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryLeisureMusic.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.CYAN)
-                    btnCategoryLeisureMusic.setTextColor(Color.BLUE)
-                    btnCategoryLeisureMusic.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
-            btnCategoryEtc.setOnClickListener(object : View.OnClickListener {
-                override fun onClick(v: View?) {
-                    v?.setBackgroundColor(Color.MAGENTA)
-                    btnCategoryEtc.setTextColor(Color.BLUE)
-                    btnCategoryEtc.setBackgroundResource(R.drawable.square_round5)
-                }
-            })
+            btnCategoryFoodDessert.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.GREEN)
+                btnCategoryFoodDessert.setTextColor(Color.BLUE)
+                btnCategoryFoodDessert.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryFoodDrinks.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.GREEN)
+                btnCategoryFoodDrinks.setTextColor(Color.BLUE)
+                btnCategoryFoodDrinks.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryFoodFoods.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.GREEN)
+                btnCategoryFoodFoods.setTextColor(Color.BLUE)
+                btnCategoryFoodFoods.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryFoodSnacks.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.GREEN)
+                btnCategoryFoodSnacks.setTextColor(Color.BLUE)
+                btnCategoryFoodSnacks.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryFoodNecessarie.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.YELLOW)
+                btnCategoryFoodNecessarie.setTextColor(Color.BLUE)
+                btnCategoryFoodNecessarie.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryLeisureDrama.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.CYAN)
+                btnCategoryLeisureDrama.setTextColor(Color.BLUE)
+                btnCategoryLeisureDrama.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryLeisureMovie.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.CYAN)
+                btnCategoryLeisureMovie.setTextColor(Color.BLUE)
+                btnCategoryLeisureMovie.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryLeisureBook.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.CYAN)
+                btnCategoryLeisureBook.setTextColor(Color.BLUE)
+                btnCategoryLeisureBook.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryLeisureMusic.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.CYAN)
+                btnCategoryLeisureMusic.setTextColor(Color.BLUE)
+                btnCategoryLeisureMusic.setBackgroundResource(R.drawable.square_round5)
+            }
+            btnCategoryEtc.setOnClickListener { v ->
+                v?.setBackgroundColor(Color.MAGENTA)
+                btnCategoryEtc.setTextColor(Color.BLUE)
+                btnCategoryEtc.setBackgroundResource(R.drawable.square_round5)
+            }
 
             var categoryVisible = false
             btnCategorySelect.setOnClickListener {
