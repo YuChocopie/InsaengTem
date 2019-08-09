@@ -10,7 +10,7 @@ import android.view.Menu
 import android.view.View
 import android.widget.CheckBox
 import android.widget.ImageButton
-import android.widget.Toast
+
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -19,10 +19,8 @@ import com.mashup.insaengtem.data.InsaengtemInterface
 import com.mashup.insaengtem.data.MainItemCard
 import com.mashup.insaengtem.retrofit.InsaengtemAIP
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_global_buttom.*
-import kotlinx.android.synthetic.main.item_global_category.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import org.jetbrains.annotations.NotNull as NotNull1
@@ -44,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         getList()
 
         home.setBackgroundResource(R.color.HotPink)
+ 
 
         //게시물 올리기 버튼
         btRegisterItem.setOnClickListener {
