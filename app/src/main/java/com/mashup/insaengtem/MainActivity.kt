@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.insaengtem.R.color.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_global_buttom.*
+import kotlinx.android.synthetic.main.item_global_category.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import org.jetbrains.annotations.NotNull as NotNull1
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 //        var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd") )
 //        tv_1.text=Strnow
 
-            home.setBackgroundResource(R.color.colorPrimaryDark)
+            home.setBackgroundResource(R.color.HotPink)
 
             //게시물 올리기 버튼
             val btRegisterItem = findViewById<ImageButton>(R.id.btRegisterItem)
@@ -81,97 +82,86 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            val button1 = findViewById<TextView>(R.id.btnCategoryFoodDessert)
-            val button2 = findViewById<TextView>(R.id.btnCategoryFoodDrinks)
-            val button3 = findViewById<TextView>(R.id.btnCategoryFoodFoods)
-            val button4 = findViewById<TextView>(R.id.btnCategoryFoodSnacks)
-            val button5 = findViewById<TextView>(R.id.btnCategoryFoodNecessarie)
-            val button6 = findViewById<TextView>(R.id.btnCategoryLeisureDrama)
-            val button7 = findViewById<TextView>(R.id.btnCategoryLeisureMovie)
-            val button8 = findViewById<TextView>(R.id.btnCategoryLeisureBook)
-            val button9 = findViewById<TextView>(R.id.btnCategoryLeisureMusic)
-            val button10 = findViewById<TextView>(R.id.btnCategoryEtc)
 
+            cb_Dessert = findViewById<CheckBox>(R.id.btnCategoryFoodDessert)
+            cb_Drinks = findViewById<CheckBox>(R.id.btnCategoryFoodDrinks)
+            cb_Foods = findViewById<CheckBox>(R.id.btnCategoryFoodFoods)
+            cb_Snacks = findViewById<CheckBox>(R.id.btnCategoryFoodSnacks)
+            cb_Necessaries = findViewById<CheckBox>(R.id.btnCategoryFoodNecessarie)
+            cb_Drama = findViewById<CheckBox>(R.id.btnCategoryLeisureDrama)
+            cb_Movie = findViewById<CheckBox>(R.id.btnCategoryLeisureMovie)
+            cb_Book = findViewById<CheckBox>(R.id.btnCategoryLeisureBook)
+            cb_Music = findViewById<CheckBox>(R.id.btnCategoryLeisureMusic)
+            cb_Etc = findViewById<CheckBox>(R.id.btnCategoryEtc)
 
-            cb_Dessert = findViewById<CheckBox>(R.id.btnCategoryFoodDessert) as CheckBox
-            cb_Drinks = findViewById(R.id.btnCategoryFoodDrinks) as CheckBox
-            cb_Foods = findViewById(R.id.btnCategoryFoodFoods) as CheckBox
-            cb_Snacks = findViewById(R.id.btnCategoryFoodSnacks) as CheckBox
-            cb_Necessaries = findViewById(R.id.btnCategoryFoodNecessarie) as CheckBox
-            cb_Drama = findViewById(R.id.btnCategoryLeisureDrama) as CheckBox
-            cb_Movie = findViewById(R.id.btnCategoryLeisureMovie) as CheckBox
-            cb_Book = findViewById(R.id.btnCategoryLeisureBook) as CheckBox
-            cb_Music = findViewById(R.id.btnCategoryLeisureMusic) as CheckBox
-            cb_Etc = findViewById(R.id.btnCategoryEtc) as CheckBox
-
-            button1.setOnClickListener(object : View.OnClickListener {
+            btnCategoryFoodDessert.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.GREEN)
-                    button1.setTextColor(Color.BLUE)
-                    button1.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryFoodDessert.setTextColor(Color.BLUE)
+                    btnCategoryFoodDessert.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button2.setOnClickListener(object : View.OnClickListener {
+            btnCategoryFoodDrinks.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.GREEN)
-                    button2.setTextColor(Color.BLUE)
-                    button2.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryFoodDrinks.setTextColor(Color.BLUE)
+                    btnCategoryFoodDrinks.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button3.setOnClickListener(object : View.OnClickListener {
+            btnCategoryFoodFoods.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.GREEN)
-                    button3.setTextColor(Color.BLUE)
-                    button3.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryFoodFoods.setTextColor(Color.BLUE)
+                    btnCategoryFoodFoods.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button4.setOnClickListener(object : View.OnClickListener {
+            btnCategoryFoodSnacks.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.GREEN)
-                    button4.setTextColor(Color.BLUE)
-                    button4.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryFoodSnacks.setTextColor(Color.BLUE)
+                    btnCategoryFoodSnacks.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button5.setOnClickListener(object : View.OnClickListener {
+            btnCategoryFoodNecessarie.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.YELLOW)
-                    button5.setTextColor(Color.BLUE)
-                    button5.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryFoodNecessarie.setTextColor(Color.BLUE)
+                    btnCategoryFoodNecessarie.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button6.setOnClickListener(object : View.OnClickListener {
+            btnCategoryLeisureDrama.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.CYAN)
-                    button6.setTextColor(Color.BLUE)
-                    button6.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryLeisureDrama.setTextColor(Color.BLUE)
+                    btnCategoryLeisureDrama.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button7.setOnClickListener(object : View.OnClickListener {
+            btnCategoryLeisureMovie.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.CYAN)
-                    button7.setTextColor(Color.BLUE)
-                    button7.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryLeisureMovie.setTextColor(Color.BLUE)
+                    btnCategoryLeisureMovie.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button8.setOnClickListener(object : View.OnClickListener {
+            btnCategoryLeisureBook.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.CYAN)
-                    button8.setTextColor(Color.BLUE)
-                    button8.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryLeisureBook.setTextColor(Color.BLUE)
+                    btnCategoryLeisureBook.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button9.setOnClickListener(object : View.OnClickListener {
+            btnCategoryLeisureMusic.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.CYAN)
-                    button9.setTextColor(Color.BLUE)
-                    button9.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryLeisureMusic.setTextColor(Color.BLUE)
+                    btnCategoryLeisureMusic.setBackgroundResource(R.drawable.square_round5)
                 }
             })
-            button10.setOnClickListener(object : View.OnClickListener {
+            btnCategoryEtc.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     v?.setBackgroundColor(Color.MAGENTA)
-                    button10.setTextColor(Color.BLUE)
-                    button10.setBackgroundResource(R.drawable.square_round5)
+                    btnCategoryEtc.setTextColor(Color.BLUE)
+                    btnCategoryEtc.setBackgroundResource(R.drawable.square_round5)
                 }
             })
 
@@ -225,4 +215,7 @@ class MainActivity : AppCompatActivity() {
             }
             return super.onCreateOptionsMenu(menu)
         }
+
+
     }
+

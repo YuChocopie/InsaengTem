@@ -103,7 +103,7 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
 
         val btRegisterItem = findViewById<ImageButton>(R.id.btRegisterItem)
 
-        btRegisterItem.setBackgroundResource(R.color.colorPrimaryDark)
+        btRegisterItem.setBackgroundResource(R.color.HotPink)
 
         //마이페이지 클릭시 마이페이지 가기
         val btMyPage1= findViewById<ImageButton>(R.id.btMypage)
@@ -142,6 +142,5 @@ class RegisterActivity : AppCompatActivity(), LifecycleOwner {
             Log.e("여기야", "끝났어요")
 
         }
-        Log.e("여기야", "아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ")
     }
 }

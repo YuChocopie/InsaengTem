@@ -11,7 +11,8 @@ class MyPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mypage)
 
-        btMypage.setBackgroundResource(R.color.colorPrimaryDark)
+
+        btMypage.setBackgroundResource(R.color.HotPink)
 
         //홈버튼 클릭시 홈으로 가기
         val home = findViewById<ImageButton>(R.id.home)
