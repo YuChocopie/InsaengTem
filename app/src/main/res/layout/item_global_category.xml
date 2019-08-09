@@ -5,12 +5,10 @@
         android:id="@+id/categories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:orientation="vertical">
-    <RadioGroup
-            android:id="@+id/radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+
         <LinearLayout
                 android:id="@+id/category1"
                 android:layout_width="wrap_content"
@@ -19,7 +17,7 @@
 
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:padding="6dp"
                     android:gravity="center"
@@ -29,12 +27,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#디저트"
+                    android:textStyle="italic"
                     android:onClick="radio_button_click"
             />
 
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -44,11 +43,12 @@
                     android:layout_height="wrap_content"
                     android:lines="1"
                     android:text="#주류"
+                    android:textStyle="italic"
                     android:onClick="radio_button_click"/>
 
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -58,11 +58,12 @@
                     android:layout_height="wrap_content"
                     android:lines="1"
                     android:text="#음식"
+                    android:textStyle="italic"
                     android:onClick="radio_button_click"/>
 
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -71,12 +72,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
+                    android:textStyle="italic"
                     android:text="#스낵"/>
 
             <CheckBox
+                    android:textStyle="italic"
                     android:layout_weight="1"
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -95,7 +98,7 @@
         >
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -104,10 +107,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
+                    android:textStyle="italic"
                     android:text="#드라마"/>
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -116,10 +120,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
+                    android:textStyle="italic"
                     android:text="#영화"/>
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -128,10 +133,11 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:lines="1"
+                    android:textStyle="italic"
                     android:text="#책"/>
             <CheckBox
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -140,10 +146,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
+                    android:textStyle="italic"
                     android:text="#음악"/>
             <CheckBox
+                    android:textStyle="italic"
                     android:background="@drawable/square_round5"
-                    android:backgroundTint="#8BF0F05B"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="13sp"
@@ -154,5 +162,4 @@
                     android:lines="1"
                     android:text="#기타"/>
         </LinearLayout>
-    </RadioGroup>
 </LinearLayout>
